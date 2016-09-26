@@ -164,9 +164,9 @@ SEARCH_VIEW = getattr(
     django_settings,
     'WIKI_SEARCH_VIEW',
     'wiki.views.article.SearchView'
-    if 'wiki.plugins.haystack' not in django_settings.INSTALLED_APPS
+    if 'wiki.plugins.wiki_haystack' not in django_settings.INSTALLED_APPS
     else
-    'wiki.plugins.haystack.views.HaystackSearchView'
+    'wiki.plugins.wiki_haystack.views.HaystackSearchView'
 )
 
 # Seconds of timeout before renewing article cache. Articles are automatically
