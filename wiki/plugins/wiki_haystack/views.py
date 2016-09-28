@@ -29,6 +29,6 @@ class HaystackSearchView(SearchView):
         else:
             qs = qs.exclude(other_read=False)
 
-        qs = qs.filter(content=AutoQuery(self.query))
+        qs = qs.filter(content=AutoQuery(self.query)).highlight()
         qs = qs.load_all()
         return qs

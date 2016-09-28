@@ -74,6 +74,9 @@ def wiki_form(context, form_obj):
     context.update({'form': form_obj})
     return context
 
+@register.filter
+def make_strong(content):
+    return mark_safe(content.replace('<em>', '<strong>').replace('</em>', '</strong>'))
 
 # XXX html strong tag is hardcoded
 @register.filter
