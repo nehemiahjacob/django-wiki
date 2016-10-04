@@ -1,0 +1,17 @@
+{% load wiki_tags i18n humanize %}
+{% for urlpath in article.object.urlpath_set.all %}
+    <h3><a href="{% url 'wiki:get' path=urlpath.path %}">{{ article.object.current_revision.title }}</a></h3>
+
+{% empty %}
+    <a href="{% url 'wiki:get' article_id=article.object.id %}">{{ article.object.current_revision.title }}</a>
+{% endfor %}
+{% if article.object.current_revision.deleted %}
+    <span class="fa fa-trash"></span>
+{% endif %}
+{% if article.object.current_revision.locked %}
+    <span class="fa fa-lock"></span>
+{% endif %}
+
+{% for highlight in article.highlighted %}
+    <p>{{ highlight|make_strong }}</p>
+{% endfor %}
