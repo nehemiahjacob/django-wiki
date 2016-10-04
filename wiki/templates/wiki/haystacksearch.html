@@ -30,12 +30,6 @@
     {% block wiki_search_loop %}
     {% include "wiki/includes/haystacksearchresult.html" %}
     {% endblock %}
-    {% empty%}
-    <tr>
-      <td colspan="100">
-        <em>{% trans "There are no articles in this level" %}</em>
-      </td>
-    </tr>
   {% endfor %}
 </table>
 
