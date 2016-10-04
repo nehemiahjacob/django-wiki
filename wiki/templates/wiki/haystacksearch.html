@@ -25,24 +25,6 @@
 </p>
 </form>
 
-<table class="table table-striped">
-  <tr>
-    <th style="width: 75%">{% trans "Title" %}</th>
-    <th>{% trans "Last modified" %}</th>
-  </tr>
-  {% for article in articles %}
-    {% block wiki_search_loop %}
-    {% include "wiki/includes/haystacksearchresult.html" %}
-    {% endblock %}
-    {% empty%}
-    <tr>
-      <td colspan="100">
-        <em>{% trans "There are no articles in this level" %}</em>
-      </td>
-    </tr>
-  {% endfor %}
-</table>
-
 {% include "wiki/includes/pagination.html" %}
 
 {% endblock %}
