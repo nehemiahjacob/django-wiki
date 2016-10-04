@@ -26,10 +26,6 @@
 </form>
 
 <table class="table table-striped">
-  <tr>
-    <th style="width: 75%">{% trans "Title" %}</th>
-    <th>{% trans "Last modified" %}</th>
-  </tr>
   {% for article in articles %}
     {% block wiki_search_loop %}
     {% include "wiki/includes/haystacksearchresult.html" %}
